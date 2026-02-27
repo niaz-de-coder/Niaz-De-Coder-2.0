@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Niaz De Coder | Portfolio</title>
+<!-- Google Fonts: Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Font Awesome for Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1f68f9',
+            dark: '#0f172a',
+            glass: 'rgba(30, 41, 59, 0.7)',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          borderRadius: {
+            'custom': '8px',
+          }
+        }
+      }
+    }
+  </script>
+<style data-purpose="custom-animations">
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+      animation: fadeIn 0.8s ease-out forwards;
+    }
+    .glass-effect {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .section-padding {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+    }
+  </style>
+</head>
+<body class="bg-dark text-slate-200 font-sans selection:bg-primary selection:text-white">
+<!-- BEGIN: MainNavbar -->
+<nav class="fixed top-0 w-full z-50 glass-effect bg-dark/80 border-b border-slate-800" data-purpose="navigation-bar">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-20">
+<!-- Logo -->
+<div class="flex-shrink-0">
+<a class="flex items-center gap-2" href="#home">
+<img alt="Logo" class="h-10 w-auto rounded-custom" onerror="this.src='https://placehold.co/100x40/1f68f9/ffffff?text=NIAZ'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALgeAIyWexLeNmM1EkDI10zPjN19Hkr-KPfdJ-FQ5mwsJQOiFs1932Ga3Kbvhd0_hkUnXKJQ9XnVFEXRBtqQ0KtyO0nw6jjUahZVkDk1HsKlSVFqfpjqajtDTky-zWpQ5NjzmfIZy_9qh0s7lx1euQmLqOuRvIK1fMo_7dm7RTxF7XVftetiJeqKX7Quxk2ZDYrRR5KXeAjScIy6cIhxz8CeymFzF-Z8Cq1ypf5hzlq7yaxU3Z0i9bfPRJgV7C5P0iI7__1II-8DY"/>
+</a>
+</div>
+<!-- Desktop Menu -->
+<div class="hidden md:block">
+<div class="ml-10 flex items-baseline space-x-6">
+<a class="hover:text-primary px-3 py-2 text-sm font-medium transition-colors" href="#home">Home</a>
+<a class="hover:text-primary px-3 py-2 text-sm font-medium transition-colors" href="#about">About</a>
+<a class="hover:text-primary px-3 py-2 text-sm font-medium transition-colors" href="#education">Education</a>
+<a class="hover:text-primary px-3 py-2 text-sm font-medium transition-colors" href="#skills">Skills</a>
+<a class="hover:text-primary px-3 py-2 text-sm font-medium transition-colors" href="#projects">Projects</a>
+<a class="bg-primary hover:bg-blue-600 text-white px-5 py-2 rounded-custom text-sm font-medium transition-all" href="#contact">Contact</a>
+</div>
+</div>
+<!-- Mobile Menu Button -->
+<div class="md:hidden">
+<button class="text-slate-300 hover:text-white p-2" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" type="button">
+<i class="fa-solid fa-bars-staggered text-2xl"></i>
+</button>
+</div>
+</div>
+</div>
+<!-- Mobile Menu Content -->
+<div class="hidden md:hidden glass-effect bg-dark/95 border-b border-slate-800" id="mobile-menu">
+<div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+<a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary/20" href="#home">Home</a>
+<a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary/20" href="#about">About</a>
+<a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary/20" href="#education">Education</a>
+<a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary/20" href="#skills">Skills</a>
+<a class="block px-3 py-2 rounded-md text-base font-medium hover:bg-primary/20" href="#projects">Projects</a>
+<a class="block px-3 py-2 rounded-md text-base font-medium bg-primary" href="#contact">Contact</a>
+</div>
+</div>
+</nav>
+<!-- END: MainNavbar -->
+<!-- BEGIN: HeroSection -->
+<main class="min-h-screen flex items-center pt-20 relative overflow-hidden" data-purpose="hero" id="home">
+<!-- Background Decor -->
+<div class="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-[100px]"></div>
+<div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-900/10 rounded-full blur-[120px]"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="text-center md:text-left max-w-3xl animate-fade-in">
+<h2 class="text-primary font-bold tracking-widest uppercase mb-4">Welcome to my world</h2>
+<h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight">
+          Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-400">Niaz De Coder</span>
+</h1>
+<p class="text-xl md:text-2xl text-slate-400 mb-8 font-medium">
+          Student | Website Developer
+        </p>
+<p class="text-lg text-slate-400 mb-10 leading-relaxed">
+          I'm a passionate web developer focused on building clean, functional, and user-centric digital experiences. Currently balancing my studies while crafting innovative web solutions.
+        </p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+<a class="px-8 py-4 bg-primary hover:bg-blue-600 text-white rounded-custom font-bold text-lg transition-all shadow-lg shadow-primary/20 flex items-center justify-center gap-2" href="#about">
+            Know More About Me <i class="fa-solid fa-arrow-right"></i>
+</a>
+<a class="px-8 py-4 glass-effect hover:bg-slate-800 text-white rounded-custom font-bold text-lg transition-all flex items-center justify-center" href="#projects">
+            View My Work
+          </a>
+</div>
+</div>
+</div>
+</main>
+<!-- END: HeroSection -->
+<!-- BEGIN: AboutSection -->
+<section class="section-padding bg-slate-900/50" data-purpose="about-me" id="about">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<!-- Image Column -->
+<div class="relative group mx-auto lg:mx-0">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary to-blue-500 rounded-custom blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+<img alt="Md. Niaz Al Motin" class="relative rounded-custom w-full max-w-md object-cover aspect-square grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl" onerror="this.src='https://placehold.co/500x500/1e293b/ffffff?text=Niaz+Profile'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDj0cD3uLsmjxcgwt66QaOU6xuFXpXo_LxcVPreiFSMQdhrjGlHLHOoProqjAMJMuW1bMwkmuK9275vJS_Te-iwjhZwBVdbHTjz7YbJSjSPcRztBpUcnZ1xDEQt-rAZgu3DGC67V5NRq1jM5Eqvc8zyt7zhSHNHQnCigwSMkkKYfQ1W0MeaxIr4NPrikiTPcveeBNAKa8vXZ5Mr4IEMKZbCSeNiiCF3xGa3DA6XsSb87qj800WtjgvwzTEUD_o93INR37f7juxf2VM"/>
+</div>
+<!-- Text Column -->
+<div class="space-y-6">
+<h2 class="text-3xl md:text-4xl font-bold text-white mb-4">About Me</h2>
+<p class="text-slate-400 text-lg leading-relaxed">
+            I am a dedicated student and web developer based in Bangladesh. My journey in technology started with a curiosity for how the internet works, leading me to master modern web technologies. I enjoy solving complex problems and turning ideas into reality through code.
+          </p>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+<div class="glass-effect p-4 rounded-custom" data-purpose="info-card">
+<span class="text-primary text-xs uppercase font-bold block mb-1">Full Name</span>
+<span class="text-white font-medium">Md. Niaz Al Motin</span>
+</div>
+<div class="glass-effect p-4 rounded-custom" data-purpose="info-card">
+<span class="text-primary text-xs uppercase font-bold block mb-1">Date of Birth</span>
+<span class="text-white font-medium">7th June 2006</span>
+</div>
+<div class="glass-effect p-4 rounded-custom" data-purpose="info-card">
+<span class="text-primary text-xs uppercase font-bold block mb-1">Nationality</span>
+<span class="text-white font-medium">Bangladesh</span>
+</div>
+<div class="glass-effect p-4 rounded-custom" data-purpose="info-card">
+<span class="text-primary text-xs uppercase font-bold block mb-1">Profession</span>
+<span class="text-white font-medium">Student &amp; Web Developer</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: AboutSection -->
+<!-- BEGIN: EducationSection -->
+<section class="section-padding" data-purpose="academic-history" id="education">
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-white mb-4">My Education</h2>
+<div class="h-1 w-20 bg-primary mx-auto rounded-full"></div>
+</div>
+<div class="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-700 before:to-transparent">
+<!-- BBS -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+<div class="flex items-center justify-center w-10 h-10 rounded-full border border-slate-700 bg-dark text-primary shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+<i class="fa-solid fa-graduation-cap"></i>
+</div>
+<div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-effect p-6 rounded-custom hover:border-primary/50 transition-colors">
+<div class="flex items-center justify-between space-x-2 mb-1">
+<div class="font-bold text-white">BBS</div>
+<time class="font-bold text-primary text-sm">2025 - Present</time>
+</div>
+<div class="text-slate-400 font-medium mb-1">American International University-Bangladesh (AIUB)</div>
+</div>
+</div>
+<!-- HSC -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+<div class="flex items-center justify-center w-10 h-10 rounded-full border border-slate-700 bg-dark text-slate-400 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+<i class="fa-solid fa-school"></i>
+</div>
+<div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-effect p-6 rounded-custom hover:border-primary/50 transition-colors">
+<div class="flex items-center justify-between space-x-2 mb-1">
+<div class="font-bold text-white">HSC</div>
+<time class="font-bold text-primary text-sm">2023 - 2024</time>
+</div>
+<div class="text-slate-400 font-medium mb-1">Dhaka Commerce College</div>
+</div>
+</div>
+<!-- Web Dev Course -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+<div class="flex items-center justify-center w-10 h-10 rounded-full border border-slate-700 bg-dark text-slate-400 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+<i class="fa-solid fa-code"></i>
+</div>
+<div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-effect p-6 rounded-custom border-primary/20">
+<div class="flex items-center justify-between space-x-2 mb-1">
+<div class="font-bold text-white">Web Development</div>
+<time class="font-bold text-primary text-sm">2023</time>
+</div>
+<div class="text-slate-400 font-medium mb-1">BKIICT-BCC</div>
+</div>
+</div>
+<!-- SSC -->
+<div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+<div class="flex items-center justify-center w-10 h-10 rounded-full border border-slate-700 bg-dark text-slate-400 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
+<i class="fa-solid fa-book"></i>
+</div>
+<div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] glass-effect p-6 rounded-custom hover:border-primary/50 transition-colors">
+<div class="flex items-center justify-between space-x-2 mb-1">
+<div class="font-bold text-white">SSC</div>
+<time class="font-bold text-primary text-sm">2020 - 2022</time>
+</div>
+<div class="text-slate-400 font-medium mb-1">South Point School and College</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: EducationSection -->
+<!-- BEGIN: SkillsSection -->
+<section class="section-padding bg-slate-900/50" data-purpose="technical-skills" id="skills">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Technical Proficiency</h2>
+<div class="h-1 w-20 bg-primary mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Coding -->
+<div class="glass-effect p-8 rounded-custom" data-purpose="skill-card">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center text-primary text-2xl">
+<i class="fa-solid fa-terminal"></i>
+</div>
+<h3 class="text-xl font-bold text-white">Coding</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-slate-800 rounded-full text-sm">HTML5</span>
+<span class="px-3 py-1 bg-slate-800 rounded-full text-sm">CSS3</span>
+<span class="px-3 py-1 bg-slate-800 rounded-full text-sm">JavaScript</span>
+<span class="px-3 py-1 bg-slate-800 rounded-full text-sm">PHP</span>
+<span class="px-3 py-1 bg-slate-800 rounded-full text-sm">Python</span>
+</div>
+</div>
+<!-- Frameworks -->
+<div class="glass-effect p-8 rounded-custom" data-purpose="skill-card">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center text-primary text-2xl">
+<i class="fa-solid fa-layer-group"></i>
+</div>
+<h3 class="text-xl font-bold text-white">Frameworks</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-slate-800 rounded-full text-sm">Bootstrap</span>
+<span class="px-3 py-1 bg-slate-800 rounded-full text-sm">React</span>
+<span class="px-3 py-1 bg-slate-800 rounded-full text-sm">Tailwind CSS</span>
+</div>
+</div>
+<!-- Database -->
+<div class="glass-effect p-8 rounded-custom" data-purpose="skill-card">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center text-primary text-2xl">
+<i class="fa-solid fa-database"></i>
+</div>
+<h3 class="text-xl font-bold text-white">Database</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-slate-800 rounded-full text-sm">MySQL</span>
+<span class="px-3 py-1 bg-slate-800 rounded-full text-sm">PostgreSQL</span>
+</div>
+</div>
+<!-- Platforms -->
+<div class="glass-effect p-8 rounded-custom" data-purpose="skill-card">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center text-primary text-2xl">
+<i class="fa-solid fa-screwdriver-wrench"></i>
+</div>
+<h3 class="text-xl font-bold text-white">Platforms</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-slate-800 rounded-full text-sm">VS Code</span>
+<span class="px-3 py-1 bg-slate-800 rounded-full text-sm">GitHub</span>
+<span class="px-3 py-1 bg-slate-800 rounded-full text-sm">Netlify</span>
+</div>
+</div>
+<!-- Languages -->
+<div class="glass-effect p-8 rounded-custom md:col-span-2 lg:col-span-1" data-purpose="skill-card">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center text-primary text-2xl">
+<i class="fa-solid fa-language"></i>
+</div>
+<h3 class="text-xl font-bold text-white">Languages</h3>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-slate-800 rounded-full text-sm">Bengali</span>
+<span class="px-3 py-1 bg-slate-800 rounded-full text-sm">English</span>
+<span class="px-3 py-1 bg-slate-800 rounded-full text-sm">Hindi</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: SkillsSection -->
+<!-- BEGIN: ProjectsSection -->
+<section class="section-padding" data-purpose="portfolio-projects" id="projects">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Latest Projects</h2>
+<div class="h-1 w-20 bg-primary mx-auto rounded-full"></div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<div class="group glass-effect rounded-custom overflow-hidden transition-all duration-300 hover:-translate-y-2">
+<div class="aspect-video relative overflow-hidden">
+<img alt="Restaurant Web" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/1e293b/ffffff?text=Restaurant+Project'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5ocpjmsdZa1zrDaaM3_pIgh27FgSXy6HkZfMVjBox88ArM_LNnc8xWbNGDUn4aLMLk52AKLAIL3-4M1gVRAOfZ3mv8Fw405tV8QyB8AcBmdh7gV0Pvg9f-cYxFqnDY4dxxgQjEh9tV8emL63HKLXU48OOJHKtB4SWrh19MVei8fE2QT9rFz1TkAGbQWiNecDJ58ofgMPsaOEj2NtD_I1SKGsGDSrfFZsmxAcDJZmSrF_w9bWAW35it_P3DAFsAKderFtkWi-I8x8"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-white mb-2">Restaurant Management</h3>
+<p class="text-slate-400 text-sm mb-4">A complete dining solution with reservation and menu management systems.</p>
+<a class="text-primary font-bold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all" href="#">View Project <i class="fa-solid fa-arrow-right-long"></i></a>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="group glass-effect rounded-custom overflow-hidden transition-all duration-300 hover:-translate-y-2">
+<div class="aspect-video relative overflow-hidden">
+<img alt="School Web" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/1e293b/ffffff?text=School+Project'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBm57GZ21dRzU8PhR4nOfObAqYoQyaMgKfQ0uBIZXiQSSFsOf1i45sXzPdb6h_A-vIutYjSNPu2UznPq5LNAaTGeeCxF3zqBUnV1ChM1dI7iAfNbh7gvfkbSPeUAm4te5Mb-5VOA8R0BVdrhDZJZf-XgGJKwirY4NsEeigJU3s_2LwL5v4NAbSaUcU2GQ01Ev02Ja1zrDr3f3pf_xJ24uGJDHQhN7R8HdV6LCCbFFc_P0G7hpbEXopWyqKfCi2LAF2_aNk-813ra2o"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-white mb-2">School Management</h3>
+<p class="text-slate-400 text-sm mb-4">Platform for academic administration, attendance, and result tracking.</p>
+<a class="text-primary font-bold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all" href="#">View Project <i class="fa-solid fa-arrow-right-long"></i></a>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="group glass-effect rounded-custom overflow-hidden transition-all duration-300 hover:-translate-y-2">
+<div class="aspect-video relative overflow-hidden">
+<img alt="Shopping Web" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/1e293b/ffffff?text=Shopping+Project'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeS8CxYG2bssVeBYKxK6Ql6VxNw5mD4DpIJZvywJbmX8t33BghNYZ33Nnx4Ebv17sRGfGfI8vGJ3I2VeOJ6BdIU9XxR1uzFn-6fDPakS0UxNupfPXCfRLV5GARXw9ls7hD69zNp3IOkAE3yBSsmPplsWHBXRjH1EX6Mfm6KaibN1q7PHpTSXa1SlQ7hu22sGnnXyAUAyUhHcn1oQ7Qay7qoCfyGfZehf7lh9fc_d53f7qORzHNa7NpiTlWEEjUFEy6WLGkAq29Dso"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-white mb-2">E-Shopping Platform</h3>
+<p class="text-slate-400 text-sm mb-4">A modern e-commerce interface with product filtering and cart features.</p>
+<a class="text-primary font-bold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all" href="#">View Project <i class="fa-solid fa-arrow-right-long"></i></a>
+</div>
+</div>
+<!-- Project 4 -->
+<div class="group glass-effect rounded-custom overflow-hidden transition-all duration-300 hover:-translate-y-2">
+<div class="aspect-video relative overflow-hidden">
+<img alt="Hotel Web" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/1e293b/ffffff?text=Hotel+Project'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8mLCNFhodNdI30C_cdEAtiXGvHS1EtduDdP7lX54V3F5zMe-RMBrfq4MIxvYlJr6W882ixbjX0q0FJk7UonQFAi887791IWtCdGC6-gDhT0180zAkUbwqpuu1baDC_Sj9R7jLvyS9rhvxCysXvj7lxOP1SoEqjLlVQcltDHk3mLbOwzh5QCzsdQnFYmf-MlulaovfPhhtUm4QAl2BCSyAZsbrR7YSTjmoZlUQ3tIP_eO7ItBhiwvM66nqP2u3MhLnVY4NwlZFJqA"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-white mb-2">Hotel Booking</h3>
+<p class="text-slate-400 text-sm mb-4">Luxurious UI for room selection, amenities check, and booking flows.</p>
+<a class="text-primary font-bold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all" href="#">View Project <i class="fa-solid fa-arrow-right-long"></i></a>
+</div>
+</div>
+<!-- Project 5 -->
+<div class="group glass-effect rounded-custom overflow-hidden transition-all duration-300 hover:-translate-y-2">
+<div class="aspect-video relative overflow-hidden">
+<img alt="Billing Web" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/1e293b/ffffff?text=Billing+Project'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuAo3nfj58VjUE-nIXg396DpMuMNF3FYYhpBfVaMBEFbMhAUD3UYbNy2qbuK5c6yiFI-bXI0GVfRdJGBzwQpVDnIIrCmDkOIZFc9wXv7QOBgGe_228Wp4iQ168FtM7IMPy9goFHRY6h0jrvC6nRIeIC5gFstppUZKx6Ie2qp0LoaIevWTB9sDuPmxwCkDmEA4kTyKsy98-BE2wTy8ZpCPRhuY48VN8tBEbnzdpSSzZntJqJ2lRDTFuW982aV6Vzj0KXMM88QCIw70"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-white mb-2">Billing Dashboard</h3>
+<p class="text-slate-400 text-sm mb-4">Invoicing and financial tracking tool for small business owners.</p>
+<a class="text-primary font-bold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all" href="#">View Project <i class="fa-solid fa-arrow-right-long"></i></a>
+</div>
+</div>
+<!-- Project 6 -->
+<div class="group glass-effect rounded-custom overflow-hidden transition-all duration-300 hover:-translate-y-2">
+<div class="aspect-video relative overflow-hidden">
+<img alt="Gaming Web" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/1e293b/ffffff?text=Gaming+Project'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMiOX_LIFh3gj-U4Pxy590ceVG8Kdi-rw3abxSZEzar7AmtDtQ1Das5FZgm_ZrIrv7ljZpWrK5xoFWOPTLt6B2XNBU8rH8itL3fEVZ0LiBeh_O9xn0B1koRIC7vksDfDR53q3Bnyp6YAEkwhICkxgoZkEwa4fKUdIWiG2GPra9ZM43vdrqjT-1tQhBahe4YF4ElccrIkiOegJbDga3WsvVwl01KYbGM2Qs8Bo9oRJJmxUJoy7no5CgpKYwrX3cCeWkz3BOQ6e2mZE"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-white mb-2">Gaming Portal</h3>
+<p class="text-slate-400 text-sm mb-4">Interactive gaming community hub with news and leaderboard features.</p>
+<a class="text-primary font-bold text-sm inline-flex items-center gap-1 hover:gap-2 transition-all" href="#">View Project <i class="fa-solid fa-arrow-right-long"></i></a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ProjectsSection -->
+<!-- BEGIN: ContactSection -->
+<section class="section-padding bg-slate-900/50" data-purpose="contact-form" id="contact">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<!-- Contact Info -->
+<div>
+<h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Get In Touch</h2>
+<p class="text-slate-400 text-lg mb-8">
+            Have a project in mind or just want to say hi? Feel free to reach out. I'm always open to discussing new projects, creative ideas or opportunities to be part of your visions.
+          </p>
+<div class="space-y-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 glass-effect rounded-custom flex items-center justify-center text-primary">
+<i class="fa-solid fa-envelope"></i>
+</div>
+<div>
+<span class="block text-slate-500 text-sm">Email Me</span>
+<span class="text-white font-medium">niaz.decoder@example.com</span>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 glass-effect rounded-custom flex items-center justify-center text-primary">
+<i class="fa-solid fa-phone"></i>
+</div>
+<div>
+<span class="block text-slate-500 text-sm">Call Me</span>
+<span class="text-white font-medium">+880 1XXX XXXXXX</span>
+</div>
+</div>
+</div>
+<!-- Social Icons -->
+<div class="mt-10">
+<h4 class="text-white font-bold mb-4 uppercase tracking-widest text-sm">Follow Me</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 glass-effect rounded-custom flex items-center justify-center hover:bg-primary transition-colors" href="#"><i class="fa-brands fa-facebook-f"></i></a>
+<a class="w-10 h-10 glass-effect rounded-custom flex items-center justify-center hover:bg-primary transition-colors" href="#"><i class="fa-brands fa-instagram"></i></a>
+<a class="w-10 h-10 glass-effect rounded-custom flex items-center justify-center hover:bg-primary transition-colors" href="#"><i class="fa-brands fa-whatsapp"></i></a>
+<a class="w-10 h-10 glass-effect rounded-custom flex items-center justify-center hover:bg-primary transition-colors" href="#"><i class="fa-brands fa-github"></i></a>
+</div>
+</div>
+</div>
+<!-- Form -->
+<div class="glass-effect p-8 rounded-custom shadow-2xl">
+<form class="space-y-4">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
+<label class="block text-sm font-medium text-slate-400 mb-1">Full Name</label>
+<input class="w-full bg-slate-800/50 border-slate-700 rounded-custom text-white placeholder-slate-500 focus:ring-primary focus:border-primary" placeholder="John Doe" type="text"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-slate-400 mb-1">Email Address</label>
+<input class="w-full bg-slate-800/50 border-slate-700 rounded-custom text-white placeholder-slate-500 focus:ring-primary focus:border-primary" placeholder="john@example.com" type="email"/>
+</div>
+</div>
+<div>
+<label class="block text-sm font-medium text-slate-400 mb-1">Phone Number</label>
+<input class="w-full bg-slate-800/50 border-slate-700 rounded-custom text-white placeholder-slate-500 focus:ring-primary focus:border-primary" placeholder="+880..." type="tel"/>
+</div>
+<div>
+<label class="block text-sm font-medium text-slate-400 mb-1">Your Message</label>
+<textarea class="w-full bg-slate-800/50 border-slate-700 rounded-custom text-white placeholder-slate-500 focus:ring-primary focus:border-primary" placeholder="How can I help you?" rows="4"></textarea>
+</div>
+<button class="w-full py-4 bg-primary hover:bg-blue-600 text-white font-bold rounded-custom transition-all shadow-lg shadow-primary/20" type="submit">
+              Send Message
+            </button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- END: ContactSection -->
+<!-- BEGIN: MainFooter -->
+<footer class="bg-dark border-t border-slate-800 pt-16 pb-8" data-purpose="site-footer">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+<div class="col-span-1 md:col-span-2">
+<img alt="Logo" class="h-10 mb-6 rounded-custom" onerror="this.src='https://placehold.co/100x40/1f68f9/ffffff?text=NIAZ'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTgFSc5o5Tn29ZNdjYqxtclnBV8FoOV1ZEKTjdxKxfOm1eKv7PBmebEDPGsAbVZT9q0O6YdOo9NW8va9VuQ7_GI8UsxYQ43R5ZTZjq1Kr7tekMPbajeob1xI4DueTAP8Wu9_J9Ei8Pfunir5qX8WjC_zxkSLrOpak75Eafrtw0xyou6_pdEs7lHg4_n25CGXebxGdioCU5FnYZDNlSEp_clxTIGLaHA2QhU3S4lexOoDAk8r8OgW4ATHXtoHxQ2KX1o4q4U83deGY"/>
+<p class="text-slate-500 max-w-sm">
+            Crafting digital excellence through modern code and design. Specializing in responsive, high-performance web applications.
+          </p>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Quick Links</h4>
+<ul class="space-y-4 text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#home">Home</a></li>
+<li><a class="hover:text-primary transition-colors" href="#about">About</a></li>
+<li><a class="hover:text-primary transition-colors" href="#projects">Projects</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-white font-bold mb-6">Legal</h4>
+<ul class="space-y-4 text-slate-500">
+<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-slate-800 text-center">
+<p class="text-slate-600 text-sm">
+          © <span id="year"></span> Niaz De Coder. All rights reserved. Designed with ❤️ in Bangladesh.
+        </p>
+</div>
+</div>
+</footer>
+<!-- END: MainFooter -->
+<script data-purpose="ui-interactions">
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Smooth scroll offset for fixed navbar
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const headerOffset = 80;
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+          
+          // Close mobile menu if open
+          document.getElementById('mobile-menu').classList.add('hidden');
+        }
+      });
+    });
+
+    // Active link highlighting on scroll
+    window.addEventListener('scroll', () => {
+      let current = '';
+      const sections = document.querySelectorAll('section, main');
+      const navLinks = document.querySelectorAll('nav .hidden a');
+
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (pageYOffset >= sectionTop - 100) {
+          current = section.getAttribute('id');
+        }
+      });
+
+      navLinks.forEach(link => {
+        link.classList.remove('text-primary');
+        if (link.getAttribute('href').includes(current)) {
+          link.classList.add('text-primary');
+        }
+      });
+    });
+  </script>
+</body></html>
