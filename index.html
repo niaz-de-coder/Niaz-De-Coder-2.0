@@ -433,24 +433,24 @@
 </div>
 <!-- Form -->
 <div class="glass-effect p-8 rounded-custom shadow-2xl">
-<form class="space-y-4" action="/https://script.google.com/macros/s/AKfycbzpL2rLevBt0Tk6dBOOcUI1StdARFbpgkoGeMR61SLFZOT1hte4XQJbR4CpmmPJ3FU2Xg/exec" method="get">
+<form class="space-y-4" action="https://script.google.com/macros/s/AKfycbzpL2rLevBt0Tk6dBOOcUI1StdARFbpgkoGeMR61SLFZOT1hte4XQJbR4CpmmPJ3FU2Xg/exec" method="post">
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 <div>
-<label class="block text-sm font-medium text-slate-400 mb-1">Full Name</label>
+<label name="Name" class="block text-sm font-medium text-slate-400 mb-1">Full Name</label>
 <input class="w-full bg-slate-800/50 border-slate-700 rounded-custom text-white placeholder-slate-500 focus:ring-primary focus:border-primary" placeholder="John Doe" type="text"/>
 </div>
 <div>
 <label class="block text-sm font-medium text-slate-400 mb-1">Email Address</label>
-<input class="w-full bg-slate-800/50 border-slate-700 rounded-custom text-white placeholder-slate-500 focus:ring-primary focus:border-primary" placeholder="john@example.com" type="email"/>
+<input name="Email" class="w-full bg-slate-800/50 border-slate-700 rounded-custom text-white placeholder-slate-500 focus:ring-primary focus:border-primary" placeholder="john@example.com" type="email"/>
 </div>
 </div>
 <div>
 <label class="block text-sm font-medium text-slate-400 mb-1">Phone Number</label>
-<input class="w-full bg-slate-800/50 border-slate-700 rounded-custom text-white placeholder-slate-500 focus:ring-primary focus:border-primary" placeholder="+880..." type="tel"/>
+<input name="Phone" class="w-full bg-slate-800/50 border-slate-700 rounded-custom text-white placeholder-slate-500 focus:ring-primary focus:border-primary" placeholder="+880..." type="tel"/>
 </div>
 <div>
 <label class="block text-sm font-medium text-slate-400 mb-1">Your Message</label>
-<textarea class="w-full bg-slate-800/50 border-slate-700 rounded-custom text-white placeholder-slate-500 focus:ring-primary focus:border-primary" placeholder="How can I help you?" rows="4"></textarea>
+<textarea name="Message" class="w-full bg-slate-800/50 border-slate-700 rounded-custom text-white placeholder-slate-500 focus:ring-primary focus:border-primary" placeholder="How can I help you?" rows="4"></textarea>
 </div>
 <button class="w-full py-4 bg-primary hover:bg-blue-600 text-white font-bold rounded-custom transition-all shadow-lg shadow-primary/20" type="submit">
               Send Message
@@ -540,5 +540,33 @@
         }
       });
     });
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault(); // Stop normal form submission
+
+  const form = e.target;
+  const formData = new FormData(form);
+  const statusDiv = document.getElementById('formStatus');
+
+  // Show sending indicator
+  statusDiv.innerHTML = '<p class="text-blue-400">Sending...</p>';
+
+  fetch(form.action, {
+    method: 'POST',
+    body: formData
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.result === 'success') {
+      statusDiv.innerHTML = '<p class="text-green-400">✅ Message sent successfully!</p>';
+      form.reset(); // Optional: clear the form
+    } else {
+      statusDiv.innerHTML = '<p class="text-red-400">❌ Error: ' + data.error + '</p>';
+    }
+  })
+  .catch(error => {
+    statusDiv.innerHTML = '<p class="text-red-400">❌ Network error. Please try again.</p>';
+  });
+});
   </script>
 </body></html>
